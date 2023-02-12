@@ -1,3 +1,5 @@
+#Imports pending
+
 #This is where the current game-state is printed and directed
 class Agency:
     '''Process the player input and print properties'''
@@ -11,9 +13,9 @@ class Agency:
         }
         #These will offer the player destinations
         self.travel = {
-            "1": locations.mine(),
-            "2": locations.forge(),
-            "3": locations.camp()
+            "Go to the Mine": locations.mine(),
+            "Go to the Forge": locations.forge(),
+            "Go to the Encampment": locations.camp()
         }
     def display_UI(self):
         '''Display possible actions.'''
