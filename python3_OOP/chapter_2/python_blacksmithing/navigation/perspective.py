@@ -1,18 +1,19 @@
-class Status:
-    '''Process the player input and update properties'''
+#This is where the current game-state is printed and directed
+class Agency:
+    '''Process the player input and print properties'''
     def __init__(self):
-        self.status = Status()
-        #These will report the associated values per character module
-        self.attributes = {
-            "skill": self.check_skill,
-            "stamina": self.check_stamina,
-            "coins": self.check_coins,
-            "inventory": self.check_inventory,
-        }
+        
+        #These will offer the player decisions
         self.decisions = {
-            "1": self.travel,
-            "2": self.review,
-            "3": self.vendor,
+            "Travel": protagonist.action_travel(),
+            "Review": protagonist.action_review(),
+            "Vendor": protagonist.action_vendor(),
+        }
+        #These will offer the player destinations
+        self.travel = {
+            "1": locations.mine(),
+            "2": locations.forge(),
+            "3": locations.camp()
         }
     def display_UI(self):
         '''Display possible actions.'''
